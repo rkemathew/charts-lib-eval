@@ -1,9 +1,10 @@
-<div style="text-align:center">
-  <h1>Welcome to {{ title }}!</h1>
+<div style="text-align:center; margin-bottom:20;">
+  <h2>POC App for JS Charting Library Evaluation and Potential Charting Framework Design</h2>
 </div>
 
 <highcharts-chart 
+  *ngIf="chartOptions"
   [Highcharts]="highCharts"
   [options]="chartOptions"
-  style="width: 50%; height: 400px; display: block;"
+  style="width: 900px; height: 400px; display: block;"
 ></highcharts-chart>

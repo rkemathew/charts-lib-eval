@@ -1,88 +1,88 @@
-Geography,CompensationElement,JobFunction,JobFamily,Expectations,YearsEmployed,BelowExpYE,MeetsExpYE,AboveExpYE,,BINS,TICKS_BELOW,TICKS_MEETS,TICKS_ABOVE
-New York,CE1,Jfunc001,Jfam001,1,4,4,0,0,,1,64,60,67
-New York,CE2,Jfunc002,Jfam002,3,3,0,0,3,,2,70,66,70
-New York,CE6,Jfunc001,Jfam002,2,1,0,1,0,,3,76,71,77
-New York,CE1,Jfunc002,Jfam001,1,7,7,0,0,,4,82,83,84
-New York,CE5,Jfunc003,Jfam005,1,3,3,0,0,,5,82,83,84
-New York,CE5,Jfunc001,Jfam003,2,1,0,1,0,,6,82,83,84
-New York,CE1,Jfunc001,Jfam001,3,7,0,0,7,,7,87,87,87
-New York,CE6,Jfunc001,Jfam002,2,4,0,4,0,,,,,
-New York,CE1,Jfunc002,Jfam001,2,2,0,2,0,,,,,
-New York,CE5,Jfunc003,Jfam002,3,4,0,0,4,,,,,
-New York,CE5,Jfunc001,Jfam001,2,4,0,4,0,,,,,
-New York,CE6,Jfunc001,Jfam002,2,1,0,1,0,,,,,
-New York,CE1,Jfunc001,Jfam001,1,7,7,0,0,,,,,
-New York,CE5,Jfunc002,Jfam005,1,4,4,0,0,,,,,
-New York,CE5,Jfunc002,Jfam002,2,2,0,2,0,,,,,
-New York,CE1,Jfunc002,Jfam002,3,4,0,0,4,,,,,
-New York,CE5,Jfunc001,Jfam001,2,3,0,3,0,,,,,
-New York,CE5,Jfunc002,Jfam002,1,1,1,0,0,,,,,
-New York,CE1,Jfunc003,Jfam002,1,7,7,0,0,,,,,
-New York,CE6,Jfunc001,Jfam001,1,4,4,0,0,,,,,
-New York,CE1,Jfunc001,Jfam002,1,2,2,0,0,,,,,
-New York,CE6,Jfunc001,Jfam001,2,4,0,4,0,,,,,
-New York,CE1,Jfunc001,Jfam002,1,1,1,0,0,,,,,
-New York,CE5,Jfunc002,Jfam002,3,7,0,0,7,,,,,
-New York,CE1,Jfunc003,Jfam001,2,4,0,4,0,,,,,
-New York,CE1,Jfunc001,Jfam002,3,1,0,0,1,,,,,
-New York,CE6,Jfunc001,Jfam002,1,7,7,0,0,,,,,
-New York,CE1,Jfunc001,Jfam001,2,4,0,4,0,,,,,
-New York,CE6,Jfunc002,Jfam002,1,2,2,0,0,,,,,
-New Jersey,CE1,Jfunc001,Jfam001,2,4,0,4,0,,,,,
-New Jersey,CE2,Jfunc002,Jfam002,3,3,0,0,3,,,,,
-New Jersey,CE6,Jfunc001,Jfam002,2,1,0,1,0,,,,,
-New Jersey,CE1,Jfunc002,Jfam001,1,4,4,0,0,,,,,
-New Jersey,CE5,Jfunc003,Jfam005,3,1,0,0,1,,,,,
-New Jersey,CE5,Jfunc001,Jfam001,2,7,0,7,0,,,,,
-New Jersey,CE1,Jfunc001,Jfam002,2,4,0,4,0,,,,,
-New Jersey,CE6,Jfunc001,Jfam002,1,2,2,0,0,,,,,
-New Jersey,CE1,Jfunc002,Jfam002,3,2,0,0,2,,,,,
-New Jersey,CE5,Jfunc003,Jfam001,3,4,0,0,4,,,,,
-New Jersey,CE5,Jfunc001,Jfam002,2,3,0,3,0,,,,,
-New Jersey,CE1,Jfunc001,Jfam002,2,1,0,1,0,,,,,
-New Jersey,CE6,Jfunc001,Jfam001,1,7,7,0,0,,,,,
-New Jersey,CE1,Jfunc001,Jfam002,3,4,0,0,4,,,,,
-New Jersey,CE5,Jfunc002,Jfam001,2,2,0,2,0,,,,,
-New Jersey,CE1,Jfunc003,Jfam002,3,4,0,0,4,,,,,
-New Jersey,CE5,Jfunc001,Jfam002,3,3,0,0,3,,,,,
-New Jersey,CE5,Jfunc002,Jfam002,2,1,0,1,0,,,,,
-New Jersey,CE1,Jfunc001,Jfam002,2,7,0,7,0,,,,,
-New Jersey,CE2,Jfunc002,Jfam001,1,3,3,0,0,,,,,
-New Jersey,CE6,Jfunc001,Jfam002,3,1,0,0,1,,,,,
-New Jersey,CE1,Jfunc002,Jfam002,1,3,3,0,0,,,,,
-New Jersey,CE5,Jfunc003,Jfam001,1,1,1,0,0,,,,,
-New Jersey,CE5,Jfunc001,Jfam002,2,7,0,7,0,,,,,
-New Jersey,CE1,Jfunc001,Jfam001,3,4,0,0,4,,,,,
-New Jersey,CE6,Jfunc001,Jfam002,3,2,0,0,2,,,,,
-New Jersey,CE1,Jfunc002,Jfam002,2,4,0,4,0,,,,,
-New Jersey,CE5,Jfunc003,Jfam001,1,3,3,0,0,,,,,
-New Jersey,CE1,Jfunc001,Jfam002,1,2,2,0,0,,,,,
-Pennsylvania,CE5,Jfunc002,Jfam001,2,4,0,4,0,,,,,
-Pennsylvania,CE5,Jfunc001,Jfam002,3,3,0,0,3,,,,,
-Pennsylvania,CE1,Jfunc002,Jfam002,2,1,0,1,0,,,,,
-Pennsylvania,CE2,Jfunc001,Jfam001,2,3,0,3,0,,,,,
-Pennsylvania,CE6,Jfunc002,Jfam005,3,1,0,0,1,,,,,
-Pennsylvania,CE1,Jfunc003,Jfam001,2,7,0,7,0,,,,,
-Pennsylvania,CE1,Jfunc001,Jfam002,2,4,0,4,0,,,,,
-Pennsylvania,CE5,Jfunc002,Jfam002,1,2,2,0,0,,,,,
-Pennsylvania,CE5,Jfunc003,Jfam002,1,4,4,0,0,,,,,
-Pennsylvania,CE1,Jfunc001,Jfam001,3,3,0,0,3,,,,,
-Pennsylvania,CE6,Jfunc001,Jfam002,2,3,0,3,0,,,,,
-Pennsylvania,CE1,Jfunc001,Jfam002,2,1,0,1,0,,,,,
-Pennsylvania,CE6,Jfunc001,Jfam001,3,7,0,0,7,,,,,
-Pennsylvania,CE2,Jfunc002,Jfam002,2,4,0,4,0,,,,,
-Pennsylvania,CE6,Jfunc002,Jfam001,1,2,2,0,0,,,,,
-Pennsylvania,CE1,Jfunc003,Jfam002,3,3,0,0,3,,,,,
-Pennsylvania,CE5,Jfunc001,Jfam002,2,2,0,2,0,,,,,
-Pennsylvania,CE5,Jfunc002,Jfam001,1,4,4,0,0,,,,,
-Pennsylvania,CE1,Jfunc001,Jfam005,1,3,3,0,0,,,,,
-Pennsylvania,CE6,Jfunc002,Jfam003,2,2,0,2,0,,,,,
-Pennsylvania,CE1,Jfunc003,Jfam002,3,4,0,0,4,,,,,
-Pennsylvania,CE5,Jfunc001,Jfam001,2,3,0,3,0,,,,,
-Pennsylvania,CE1,Jfunc001,Jfam002,2,1,0,1,0,,,,,
-Pennsylvania,CE5,Jfunc001,Jfam002,3,3,0,0,3,,,,,
-Pennsylvania,CE5,Jfunc001,Jfam001,2,2,0,2,0,,,,,
-Pennsylvania,CE6,Jfunc002,Jfam002,2,4,0,4,0,,,,,
-Pennsylvania,CE1,Jfunc002,Jfam002,1,3,3,0,0,,,,,
-Pennsylvania,CE5,Jfunc003,Jfam001,1,1,1,0,0,,,,,
-Pennsylvania,CE5,Jfunc001,Jfam002,3,2,0,0,2,,,,,
+Geography,CompensationElement,JobFunction,JobFamily,Expectations,YearsEmployed
+New York,CE1,Jfunc001,Jfam001,1,4
+New York,CE2,Jfunc002,Jfam002,3,3
+New York,CE6,Jfunc001,Jfam002,2,1
+New York,CE1,Jfunc002,Jfam001,1,7
+New York,CE5,Jfunc003,Jfam005,1,3
+New York,CE5,Jfunc001,Jfam003,2,1
+New York,CE1,Jfunc001,Jfam001,3,7
+New York,CE6,Jfunc001,Jfam002,2,4
+New York,CE1,Jfunc002,Jfam001,2,2
+New York,CE5,Jfunc003,Jfam002,3,4
+New York,CE5,Jfunc001,Jfam001,2,4
+New York,CE6,Jfunc001,Jfam002,2,1
+New York,CE1,Jfunc001,Jfam001,1,7
+New York,CE5,Jfunc002,Jfam005,1,4
+New York,CE5,Jfunc002,Jfam002,2,2
+New York,CE1,Jfunc002,Jfam002,3,4
+New York,CE5,Jfunc001,Jfam001,2,3
+New York,CE5,Jfunc002,Jfam002,1,1
+New York,CE1,Jfunc003,Jfam002,1,7
+New York,CE6,Jfunc001,Jfam001,1,4
+New York,CE1,Jfunc001,Jfam002,1,2
+New York,CE6,Jfunc001,Jfam001,2,4
+New York,CE1,Jfunc001,Jfam002,1,1
+New York,CE5,Jfunc002,Jfam002,3,7
+New York,CE1,Jfunc003,Jfam001,2,4
+New York,CE1,Jfunc001,Jfam002,3,1
+New York,CE6,Jfunc001,Jfam002,1,7
+New York,CE1,Jfunc001,Jfam001,2,4
+New York,CE6,Jfunc002,Jfam002,1,2
+New Jersey,CE1,Jfunc001,Jfam001,2,4
+New Jersey,CE2,Jfunc002,Jfam002,3,3
+New Jersey,CE6,Jfunc001,Jfam002,2,1
+New Jersey,CE1,Jfunc002,Jfam001,1,4
+New Jersey,CE5,Jfunc003,Jfam005,3,1
+New Jersey,CE5,Jfunc001,Jfam001,2,7
+New Jersey,CE1,Jfunc001,Jfam002,2,4
+New Jersey,CE6,Jfunc001,Jfam002,1,2
+New Jersey,CE1,Jfunc002,Jfam002,3,2
+New Jersey,CE5,Jfunc003,Jfam001,3,4
+New Jersey,CE5,Jfunc001,Jfam002,2,3
+New Jersey,CE1,Jfunc001,Jfam002,2,1
+New Jersey,CE6,Jfunc001,Jfam001,1,7
+New Jersey,CE1,Jfunc001,Jfam002,3,4
+New Jersey,CE5,Jfunc002,Jfam001,2,2
+New Jersey,CE1,Jfunc003,Jfam002,3,4
+New Jersey,CE5,Jfunc001,Jfam002,3,3
+New Jersey,CE5,Jfunc002,Jfam002,2,1
+New Jersey,CE1,Jfunc001,Jfam002,2,7
+New Jersey,CE2,Jfunc002,Jfam001,1,3
+New Jersey,CE6,Jfunc001,Jfam002,3,1
+New Jersey,CE1,Jfunc002,Jfam002,1,3
+New Jersey,CE5,Jfunc003,Jfam001,1,1
+New Jersey,CE5,Jfunc001,Jfam002,2,7
+New Jersey,CE1,Jfunc001,Jfam001,3,4
+New Jersey,CE6,Jfunc001,Jfam002,3,2
+New Jersey,CE1,Jfunc002,Jfam002,2,4
+New Jersey,CE5,Jfunc003,Jfam001,1,3
+New Jersey,CE1,Jfunc001,Jfam002,1,2
+Pennsylvania,CE5,Jfunc002,Jfam001,2,4
+Pennsylvania,CE5,Jfunc001,Jfam002,3,3
+Pennsylvania,CE1,Jfunc002,Jfam002,2,1
+Pennsylvania,CE2,Jfunc001,Jfam001,2,3
+Pennsylvania,CE6,Jfunc002,Jfam005,3,1
+Pennsylvania,CE1,Jfunc003,Jfam001,2,7
+Pennsylvania,CE1,Jfunc001,Jfam002,2,4
+Pennsylvania,CE5,Jfunc002,Jfam002,1,2
+Pennsylvania,CE5,Jfunc003,Jfam002,1,4
+Pennsylvania,CE1,Jfunc001,Jfam001,3,3
+Pennsylvania,CE6,Jfunc001,Jfam002,2,3
+Pennsylvania,CE1,Jfunc001,Jfam002,2,1
+Pennsylvania,CE6,Jfunc001,Jfam001,3,7
+Pennsylvania,CE2,Jfunc002,Jfam002,2,4
+Pennsylvania,CE6,Jfunc002,Jfam001,1,2
+Pennsylvania,CE1,Jfunc003,Jfam002,3,3
+Pennsylvania,CE5,Jfunc001,Jfam002,2,2
+Pennsylvania,CE5,Jfunc002,Jfam001,1,4
+Pennsylvania,CE1,Jfunc001,Jfam005,1,3
+Pennsylvania,CE6,Jfunc002,Jfam003,2,2
+Pennsylvania,CE1,Jfunc003,Jfam002,3,4
+Pennsylvania,CE5,Jfunc001,Jfam001,2,3
+Pennsylvania,CE1,Jfunc001,Jfam002,2,1
+Pennsylvania,CE5,Jfunc001,Jfam002,3,3
+Pennsylvania,CE5,Jfunc001,Jfam001,2,2
+Pennsylvania,CE6,Jfunc002,Jfam002,2,4
+Pennsylvania,CE1,Jfunc002,Jfam002,1,3
+Pennsylvania,CE5,Jfunc003,Jfam001,1,1
+Pennsylvania,CE5,Jfunc001,Jfam002,3,2
