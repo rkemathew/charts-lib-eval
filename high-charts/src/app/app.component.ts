@@ -34,15 +34,15 @@ export class AppComponent implements OnInit {
             if (yearsEmployed < minYears) {
                 minYears = yearsEmployed;
             }
-            
+
             if (yearsEmployed > maxYears) {
                 maxYears = yearsEmployed;
             }
         });
 
-        const seriesTicksBelow = new Array(maxYears-1).fill(0, 0, maxYears-1);
-        const seriesTicksMeets = new Array(maxYears-1).fill(0, 0, maxYears-1);
-        const seriesTicksAbove = new Array(maxYears-1).fill(0, 0, maxYears-1);
+        const seriesTicksBelow = new Array(maxYears - 1).fill(0, 0, maxYears - 1);
+        const seriesTicksMeets = new Array(maxYears - 1).fill(0, 0, maxYears - 1);
+        const seriesTicksAbove = new Array(maxYears - 1).fill(0, 0, maxYears - 1);
 
         this.data.forEach((record) => {
             const yearsEmployed = +record['YearsEmployed'];

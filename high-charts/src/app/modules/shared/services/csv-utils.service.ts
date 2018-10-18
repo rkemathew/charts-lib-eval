@@ -3,8 +3,11 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CsvUtilsService {
     public csvToJSON(csv) {
-        const lines = csv.split('\n');
-        const result = [];      
+        let lines = csv.split('\r\n');
+        if (lines.length === 0) {
+            lines = csv.split('\n');
+        }
+        const result = [];
         const headers = lines[0].split(',');
 
         for (let i = 1; i < lines.length; i++) {
@@ -19,5 +22,5 @@ export class CsvUtilsService {
         }
 
         return result;
-    }     
+    }
 }
