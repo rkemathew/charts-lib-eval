@@ -2,9 +2,4 @@
   <h2>POC App for JS Charting Library Evaluation and Potential Charting Framework Design</h2>
 </div>
 
-<highcharts-chart 
-  *ngIf="chartOptions"
-  [Highcharts]="highCharts"
-  [options]="chartOptions"
-  style="width: 900px; height: 400px; display: block;"
-></highcharts-chart>
+<div *ngIf="chartOptions" [chart]="chart" style="width: 900px; height: 400px; display: block;"></div>

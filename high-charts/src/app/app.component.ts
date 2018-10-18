@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as Highcharts from 'highcharts';
+import { Chart } from 'angular-highcharts';
 import { CsvUtilsService } from './modules/shared/services/csv-utils.service';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
+    styleUrls: ['./app.component.less'],
 })
 export class AppComponent implements OnInit {
     data = null;
-    highCharts = Highcharts;
     chartOptions = null;
+    chart = null;
 
     constructor(
         private csvUtils: CsvUtilsService,
@@ -73,6 +73,7 @@ export class AppComponent implements OnInit {
         ];
 
         this.chartOptions = this.getChartOptions(categories, series);
+        this.chart = new Chart(this.chartOptions);
     }
 
     getChartOptions(categories, series) {
@@ -118,7 +119,7 @@ export class AppComponent implements OnInit {
                 y: 80,
                 floating: false,
                 borderWidth: 1,
-                backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                backgroundColor: '#FFFFFF',
                 shadow: true
             },
             credits: {
