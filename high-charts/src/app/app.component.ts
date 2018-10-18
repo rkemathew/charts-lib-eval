@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
     data = null;
     chartOptions = null;
     chart = null;
+    isShowDialog = false;
 
     constructor(
         private csvUtils: CsvUtilsService,
@@ -127,5 +128,9 @@ export class AppComponent implements OnInit {
             },
             series: series
         };
+    }
+
+    showFilters() {
+        this.isShowDialog = true;
     }
 }

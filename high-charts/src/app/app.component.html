@@ -2,4 +2,10 @@
   <h2>POC App for JS Charting Library Evaluation and Potential Charting Framework Design</h2>
 </div>
 
-<div *ngIf="chartOptions" [chart]="chart" style="width: 900px; height: 400px; display: block;"></div>
+<div class="container">
+  <div class=""><button (click)="showFilters()">Open Filters</button></div>
+  <div *ngIf="chartOptions" [chart]="chart" style="width: 900px; height: 400px; display: block;"></div>
+</div>
+<kf-slider-dialog from="left" styleClass="filter-side-bar" [(visible)]="isShowDialog">
+  <div>Sample Slider Content</div>
+</kf-slider-dialog>

@@ -8,7 +8,8 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "rebuild:lib": "bash /c/projects/haygroup/kfhub_lib/scripts/rebuild_kfhub_lib.sh"
   },
   "private": true,
   "dependencies": {
@@ -21,9 +22,11 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "@kf-products-core/kfhub_lib": "2.7.0-rc.20",
     "angular-highcharts": "^5.2.13",
     "core-js": "^2.4.1",
     "highcharts": "^6.2.0",
+    "ngx-modialog": "5.0.0",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
@@ -43,9 +46,11 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ng-packagr": "2.4.5",
     "protractor": "~5.1.2",
+    "resize-observer-polyfill": "^1.5.0",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
-    "typescript": "~2.5.3"
+    "typescript": "2.5.2"
   }
 }
