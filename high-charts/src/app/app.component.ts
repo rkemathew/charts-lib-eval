@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Chart } from 'angular-highcharts';
 import { CsvUtilsService } from './modules/shared/services/csv-utils.service';
+import { SelectItem } from 'primeng/api';
+import { ResolvedStaticSymbol } from '@angular/compiler';
 
 @Component({
     selector: 'app-root',
@@ -10,6 +12,16 @@ import { CsvUtilsService } from './modules/shared/services/csv-utils.service';
 })
 export class AppComponent implements OnInit {
     data = null;
+    geographyFilter: SelectItem[] = [];
+    compensationElementFilter: SelectItem[] = [];
+    jobFunctionFilter: SelectItem[] = [];
+    jobFamilyFilter: SelectItem[] = [];
+
+    selectedGeographyFilter = [];
+    selectedCompensationElementFilter = [];
+    selectedJobFunctionFilter = [];
+    selectedJobFamilyFilter = [];
+
     chartOptions = null;
     chart = null;
     isShowDialog = false;
@@ -23,7 +35,54 @@ export class AppComponent implements OnInit {
         this.http.get('assets/kf-payh-poc-charts-sample-data.csv', { responseType: 'text' }).subscribe((csvData) => {
             const data = this.csvUtils.csvToJSON(csvData);
             this.data = data;
+            this.updateFilters();
             this.updateChartData();
+        });
+    }
+
+    updateFilters() {
+        const distinctGeographies = [];
+        const distinctCompensationElements = [];
+        const distinctJobFunctions = [];
+        const distinctJobFamilies = [];
+
+        this.data.forEach((record) => {
+            const geography = record['Geography'];
+            const compensationElement = record['CompensationElement'];
+            const jobFunction = record['JobFunction'];
+            const jobFamily = record['JobFamily'];
+
+            if (!distinctGeographies.includes(geography)) {
+                distinctGeographies.push(geography);
+            }
+
+            if (!distinctCompensationElements.includes(compensationElement)) {
+                distinctCompensationElements.push(compensationElement);
+            }
+
+            if (!distinctJobFunctions.includes(jobFunction)) {
+                distinctJobFunctions.push(jobFunction);
+            }
+
+            if (!distinctJobFamilies.includes(jobFamily)) {
+                distinctJobFamilies.push(jobFamily);
+            }
+        });
+
+        distinctGeographies.forEach((geography, index) => {
+            this.geographyFilter.push({ label: geography, value: geography });
+        });
+
+        distinctCompensationElements.forEach((compensationElement, index) => {
+            this.compensationElementFilter.push({ label: compensationElement, value: compensationElement});
+        });
+
+        distinctJobFunctions.forEach((jobFunction, index) => {
+            this.jobFunctionFilter.push({ label: jobFunction, value: jobFunction });
+        });
+
+        distinctJobFamilies.forEach((jobFamily, index) => {
+            this.jobFamilyFilter.push({ label: jobFamily, value: jobFamily });
         });
     }
 
@@ -132,5 +191,8 @@ export class AppComponent implements OnInit {
 
     showFilters() {
         this.isShowDialog = true;
+    }
+
+    selectFilter(filter, filterType) {
     }
 }

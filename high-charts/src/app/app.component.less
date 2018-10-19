@@ -1,4 +1,4 @@
-::ng-deep .add-competencies-side-bar.ui-sidebar.ui-sidebar-right {
+::ng-deep .filter-side-bar.ui-sidebar.ui-sidebar-right {
     background: #FFF;
     padding: 20px;
 
@@ -10,4 +10,44 @@
     .slider-content {
         height: 100%;
     }
+
+    .filter-container {
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-top: 30px;
+        margin-bottom: 20px;
+
+        .filter-dropdown {
+            width: 460px;
+            border: none;
+        
+            .ui-widget-content {
+                background: #FFF;
+            }
+        
+            .ui-listbox-header {
+                // position: absolute;
+				// width: 598px;
+				// left: 22px;
+				// top: 72px;
+				
+				.ui-inputtext {
+					width: 446px;
+				}
+            }
+        }
+    }
+}
+
+.filter-header {
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.filter-title {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 600;
 }
