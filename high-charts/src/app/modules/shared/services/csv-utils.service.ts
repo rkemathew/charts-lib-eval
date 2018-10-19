@@ -10,8 +10,6 @@ export class CsvUtilsService {
             lines = csv.split('\n');
         }
 
-        console.log(csv.indexOf('\r\n'));
-
         const result = [];
         const headers = lines[0].split(',');
 
