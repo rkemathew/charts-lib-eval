@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
     selectedCompensationElementFilter = [];
     selectedJobFunctionFilter = [];
     selectedJobFamilyFilter = [];
+    allFiltersCount = 0;
 
     chartOptions = null;
     chart = null;
@@ -135,10 +136,12 @@ export class AppComponent implements OnInit {
     getChartOptions(categories, series) {
         return {
             chart: {
-                type: 'column'
+                type: 'column',
+                plotBackgroundColor: '#F8F8F8'
             },
             title: {
-                text: 'Pay for Performance Over Time'
+                text: '',
+                floating: true
             },
             xAxis: {
                 categories: categories,
@@ -149,7 +152,7 @@ export class AppComponent implements OnInit {
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Compensation (millions)',
+                    text: 'Compensation (Millions)',
                     align: 'high'
                 },
                 labels: {
@@ -170,13 +173,16 @@ export class AppComponent implements OnInit {
             legend: {
                 layout: 'vertical',
                 align: 'right',
+                width: 150,
+                padding: 30,
+                margin: 20,
                 verticalAlign: 'top',
-                x: -40,
-                y: 80,
                 floating: false,
-                borderWidth: 1,
-                backgroundColor: '#FFFFFF',
-                shadow: true
+                borderRadius: 5,
+                itemMarginBottom: 10,
+                backgroundColor: '#FAFAFA',
+                symbolRadius: 0,
+                shadow: false
             },
             credits: {
                 enabled: false
@@ -212,6 +218,9 @@ export class AppComponent implements OnInit {
     }
 
     onFilterChange(event, filterType) {
+        this.allFiltersCount =
+            this.selectedGeographyFilter.length + this.selectedCompensationElementFilter.length +
+            this.selectedJobFunctionFilter.length + this.selectedJobFamilyFilter.length;
         this.updateChartData();
     }
 }

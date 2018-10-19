@@ -1,13 +1,18 @@
-<div style="text-align:center; margin-bottom:20;">
+<div class="page-header">
     <h2>POC App for JS Charting Library Evaluation and Potential Charting Framework Design</h2>
 </div>
 
-<div class="container">
-    <div class=""><button (click)="showFilters()">Open Filters</button></div>
-    <div *ngIf="chartOptions" [chart]="chart" style="width: 900px; height: 400px; display: block;"></div>
+<div class="filter-outer-container">
+    <div class="filter-handle" (click)="showFilters()">
+        <div class="filter-count" *ngIf="allFiltersCount > 0">{{ allFiltersCount }}</div>
+        <div><i class="glyphicon glyphicon-filter"></i></div>
+        <div class="title">F I L T E R S</div>
+    </div>
+    
+    <div *ngIf="chartOptions" [chart]="chart" style="width: 1200px; height: 563px; display: block;"></div>
 </div>
 
-<kf-slider-dialog from="left" styleClass="filter-side-bar" [(visible)]="isShowDialog">
+<kf-slider-dialog from="left" styleClass="filter-side-bar" [(visible)]="isShowDialog" showHeader="false" closable="false">
     <div class="filter-header">Report Filters</div>
 
     <div class="filter-container">
@@ -42,3 +47,4 @@
             [metaKeySelection]="false"></p-listbox>
     </div>
 </kf-slider-dialog>
+
