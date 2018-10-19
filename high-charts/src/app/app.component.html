@@ -1,73 +1,44 @@
 <div style="text-align:center; margin-bottom:20;">
-  <h2>POC App for JS Charting Library Evaluation and Potential Charting Framework Design</h2>
+    <h2>POC App for JS Charting Library Evaluation and Potential Charting Framework Design</h2>
 </div>
 
 <div class="container">
-  <div class=""><button (click)="showFilters()">Open Filters</button></div>
-  <div *ngIf="chartOptions" [chart]="chart" style="width: 900px; height: 400px; display: block;"></div>
+    <div class=""><button (click)="showFilters()">Open Filters</button></div>
+    <div *ngIf="chartOptions" [chart]="chart" style="width: 900px; height: 400px; display: block;"></div>
 </div>
 
 <kf-slider-dialog from="left" styleClass="filter-side-bar" [(visible)]="isShowDialog">
-  <div class="filter-header">Report Filters</div>
+    <div class="filter-header">Report Filters</div>
 
-  <div class="filter-container">
-      <div class="filter-title">Geography</div>
-      <p-listbox
-          styleClass="filter-dropdown"
-          [options]="geographyFilter"
-          [(ngModel)]="selectedGeographyFilter"
-          (onChange)="onFilterChange($event)"
-          [checkbox]="true"
-          [multiple]="true"
-          [filter]="true"
-          [showToggleAll]="false"
-          [metaKeySelection]="false"
-      ></p-listbox>
-  </div>
+    <div class="filter-container">
+        <div class="filter-title">Geography</div>
+        <p-listbox styleClass="filter-dropdown" [options]="geographyFilter" [(ngModel)]="selectedGeographyFilter"
+            (onChange)="onFilterChange($event, 'geography')" [checkbox]="true" [multiple]="true" [filter]="true"
+            [showToggleAll]="false"
+            [metaKeySelection]="false"></p-listbox>
+    </div>
 
-  <div class="filter-container">
-      <div class="filter-title">Compensation Element</div>
-      <p-listbox
-          styleClass="filter-dropdown"
-          [options]="compensationElementFilter"
-          [(ngModel)]="selectedCompensationElementFilter"
-          (onChange)="onFilterChange($event)"
-          [checkbox]="true"
-          [multiple]="true"
-          [filter]="true"
-          [showToggleAll]="false"
-          [metaKeySelection]="false"
-      ></p-listbox>
-  </div>
+    <div class="filter-container">
+        <div class="filter-title">Compensation Element</div>
+        <p-listbox styleClass="filter-dropdown" [options]="compensationElementFilter" [(ngModel)]="selectedCompensationElementFilter"
+            (onChange)="onFilterChange($event, 'compensationElement')" [checkbox]="true" [multiple]="true" [filter]="true"
+            [showToggleAll]="false"
+            [metaKeySelection]="false"></p-listbox>
+    </div>
 
-  <div class="filter-container">
-      <div class="filter-title">Job Function</div>
-      <p-listbox
-          styleClass="filter-dropdown"
-          [options]="jobFunctionFilter"
-          [(ngModel)]="selectedJobFunctionFilter"
-          (onChange)="onFilterChange($event)"
-          [checkbox]="true"
-          [multiple]="true"
-          [filter]="true"
-          [showToggleAll]="false"
-          [metaKeySelection]="false"
-      ></p-listbox>
-  </div>
+    <div class="filter-container">
+        <div class="filter-title">Job Function</div>
+        <p-listbox styleClass="filter-dropdown" [options]="jobFunctionFilter" [(ngModel)]="selectedJobFunctionFilter"
+            (onChange)="onFilterChange($event, 'jobFunction')" [checkbox]="true" [multiple]="true" [filter]="true"
+            [showToggleAll]="false"
+            [metaKeySelection]="false"></p-listbox>
+    </div>
 
-  <div class="filter-container">
-      <div class="filter-title">Job Family</div>
-      <p-listbox
-          styleClass="filter-dropdown"
-          [options]="jobFamilyFilter"
-          [(ngModel)]="selectedJobFamilyFilter"
-          (onChange)="onFilterChange($event)"
-          [checkbox]="true"
-          [multiple]="true"
-          [filter]="true"
-          [showToggleAll]="false"
-          [metaKeySelection]="false"
-      ></p-listbox>
-  </div>
-
+    <div class="filter-container">
+        <div class="filter-title">Job Family</div>
+        <p-listbox styleClass="filter-dropdown" [options]="jobFamilyFilter" [(ngModel)]="selectedJobFamilyFilter"
+            (onChange)="onFilterChange($event, 'jobFamily')" [checkbox]="true" [multiple]="true" [filter]="true"
+            [showToggleAll]="false"
+            [metaKeySelection]="false"></p-listbox>
+    </div>
 </kf-slider-dialog>

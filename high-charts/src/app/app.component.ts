@@ -106,25 +106,21 @@ export class AppComponent implements OnInit {
 
         this.data.forEach((record) => {
             const yearsEmployed = +record['YearsEmployed'];
-            const index = yearsEmployed - 1;
-            const expectations = +record['Expectations'];
-            switch (expectations) {
-            case 1: seriesTicksBelow[index] = seriesTicksBelow[index] ? seriesTicksBelow[index] + 1 : 1; break;
-            case 2: seriesTicksMeets[index] = seriesTicksMeets[index] ? seriesTicksMeets[index] + 1 : 1; break;
-            case 3: seriesTicksAbove[index] = seriesTicksAbove[index] ? seriesTicksAbove[index] + 1 : 1; break;
+            if (this.isInFilter(record)) {
+                const index = yearsEmployed - 1;
+                const expectations = +record['Expectations'];
+                switch (expectations) {
+                case 1: seriesTicksBelow[index] = seriesTicksBelow[index] ? seriesTicksBelow[index] + 1 : 1; break;
+                case 2: seriesTicksMeets[index] = seriesTicksMeets[index] ? seriesTicksMeets[index] + 1 : 1; break;
+                case 3: seriesTicksAbove[index] = seriesTicksAbove[index] ? seriesTicksAbove[index] + 1 : 1; break;
+                }
             }
         });
-
-        // console.log('seriesTicksBelow', seriesTicksBelow);
-        // console.log('seriesTicksMeets', seriesTicksMeets);
-        // console.log('seriesTicksAbove', seriesTicksAbove);
 
         const categories = [];
         for (let i = minYears; i <= maxYears; i++) {
             categories.push(i);
         }
-
-        // console.log('categories', categories);
 
         const series = [
             { name: 'Below Expectation', data: seriesTicksBelow },
@@ -189,10 +185,33 @@ export class AppComponent implements OnInit {
         };
     }
 
+    isInFilter(record) {
+        let retVal = true;
+
+        if (this.selectedGeographyFilter.length > 0) {
+            retVal = this.selectedGeographyFilter.includes(record['Geography']);
+        }
+
+        if (this.selectedCompensationElementFilter.length > 0) {
+            retVal = this.selectedCompensationElementFilter.includes(record['CompensationElement']);
+        }
+
+        if (this.selectedJobFunctionFilter.length > 0) {
+            retVal = this.selectedJobFunctionFilter.includes(record['JobFunction']);
+        }
+
+        if (this.selectedJobFamilyFilter.length > 0) {
+            retVal = this.selectedJobFamilyFilter.includes(record['JobFamily']);
+        }
+
+        return retVal;
+    }
+
     showFilters() {
         this.isShowDialog = true;
     }
 
-    selectFilter(filter, filterType) {
+    onFilterChange(event, filterType) {
+        this.updateChartData();
     }
 }
