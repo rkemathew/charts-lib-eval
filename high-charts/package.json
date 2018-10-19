@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "rebuild:lib": "bash /c/projects/haygroup/kfhub_lib/scripts/rebuild_kfhub_lib.sh"
+    "rebuild:lib": "bash ~/projects/haygroup/kfhub_lib/scripts/rebuild_kfhub_lib.sh"
   },
   "private": true,
   "dependencies": {
