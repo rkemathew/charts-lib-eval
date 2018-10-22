@@ -6,16 +6,15 @@ import { ChartModule } from 'angular-highcharts';
 import { ModalModule } from 'ngx-modialog';
 import { ListboxModule } from 'primeng/listbox';
 
-import { AppComponent } from './app.component';
-import { CsvUtilsService } from './modules/shared/services/csv-utils.service';
+import { HighChartsComponent } from './high-charts/high-charts.component';
 
-import { ComponentsModule } from './modules/shared/components/components.module';
 import { KfComponentsModule, KfDropdownService } from '@kf-products-core/kfhub_lib';
-
+import { CsvUtilsService } from '../services/csv-utils.service';
 @NgModule({
     declarations: [
-        AppComponent,
+        HighChartsComponent,
     ],
+
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
@@ -24,14 +23,13 @@ import { KfComponentsModule, KfDropdownService } from '@kf-products-core/kfhub_l
         ModalModule,
         ListboxModule,
         KfComponentsModule,
-        ComponentsModule,
+    ],
+    exports: [
+        HighChartsComponent,
     ],
     providers: [
         CsvUtilsService,
         KfDropdownService,
     ],
-    bootstrap: [
-        AppComponent,
-    ]
 })
-export class AppModule { }
+export class ComponentsModule { }
