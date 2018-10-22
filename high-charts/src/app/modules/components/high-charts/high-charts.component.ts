@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Chart } from 'angular-highcharts';
-import { CsvUtilsService } from '../../../shared/services/csv-utils.service';
+import { CsvUtilsService } from '../../shared/services/csv-utils.service';
 import { SelectItem } from 'primeng/api';
 
 @Component({

@@ -9,7 +9,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { AppComponent } from './app.component';
 import { CsvUtilsService } from './modules/shared/services/csv-utils.service';
 
-import { ComponentsModule } from './modules/shared/components/components.module';
+import { ComponentsModule } from './modules/components/components.module';
 import { KfComponentsModule, KfDropdownService } from '@kf-products-core/kfhub_lib';
 
 @NgModule({

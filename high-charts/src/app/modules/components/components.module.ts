@@ -9,7 +9,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { HighChartsComponent } from './high-charts/high-charts.component';
 
 import { KfComponentsModule, KfDropdownService } from '@kf-products-core/kfhub_lib';
-import { CsvUtilsService } from '../services/csv-utils.service';
+import { CsvUtilsService } from '../shared/services/csv-utils.service';
 @NgModule({
     declarations: [
         HighChartsComponent,
