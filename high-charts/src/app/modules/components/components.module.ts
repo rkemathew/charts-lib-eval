@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartModule } from 'angular-highcharts';
 import { ModalModule } from 'ngx-modialog';
-import { ListboxModule } from 'primeng/listbox';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 import { HighChartsComponent } from './high-charts/high-charts.component';
 
@@ -21,7 +21,7 @@ import { CsvUtilsService } from '../shared/services/csv-utils.service';
         HttpClientModule,
         ChartModule,
         ModalModule,
-        ListboxModule,
+        MultiSelectModule,
         KfComponentsModule,
     ],
     exports: [

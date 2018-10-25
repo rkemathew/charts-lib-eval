@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartModule } from 'angular-highcharts';
 import { ModalModule } from 'ngx-modialog';
-import { ListboxModule } from 'primeng/listbox';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 import { AppComponent } from './app.component';
 import { CsvUtilsService } from './modules/shared/services/csv-utils.service';
@@ -22,7 +22,7 @@ import { KfComponentsModule, KfDropdownService } from '@kf-products-core/kfhub_l
         HttpClientModule,
         ChartModule,
         ModalModule,
-        ListboxModule,
+        MultiSelectModule,
         KfComponentsModule,
         ComponentsModule,
     ],
