@@ -10,9 +10,12 @@ import { HighChartsComponent } from './high-charts/high-charts.component';
 
 import { KfComponentsModule, KfDropdownService } from '@kf-products-core/kfhub_lib';
 import { CsvUtilsService } from '../shared/services/csv-utils.service';
+import { GoogleChartsComponent } from './google-charts/google-charts.component';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 @NgModule({
     declarations: [
         HighChartsComponent,
+        GoogleChartsComponent,
     ],
 
     imports: [
@@ -20,12 +23,14 @@ import { CsvUtilsService } from '../shared/services/csv-utils.service';
         BrowserAnimationsModule,
         HttpClientModule,
         ChartModule,
+        Ng2GoogleChartsModule,
         ModalModule,
         MultiSelectModule,
         KfComponentsModule,
     ],
     exports: [
         HighChartsComponent,
+        GoogleChartsComponent,
     ],
     providers: [
         CsvUtilsService,

@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartModule } from 'angular-highcharts';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { ModalModule } from 'ngx-modialog';
 import { MultiSelectModule } from 'primeng/multiselect';
 
@@ -21,6 +22,7 @@ import { KfComponentsModule, KfDropdownService } from '@kf-products-core/kfhub_l
         BrowserAnimationsModule,
         HttpClientModule,
         ChartModule,
+        Ng2GoogleChartsModule,
         ModalModule,
         MultiSelectModule,
         KfComponentsModule,
