@@ -8,7 +8,7 @@ import { ModalModule } from 'ngx-modialog';
 import { MultiSelectModule } from 'primeng/multiselect';
 
 import { AppComponent } from './app.component';
-import { CsvUtilsService } from './modules/shared/services/csv-utils.service';
+import { CsvUtilsService } from './modules/services/csv-utils.service';
 
 import { ComponentsModule } from './modules/components/components.module';
 import { KfComponentsModule, KfDropdownService } from '@kf-products-core/kfhub_lib';

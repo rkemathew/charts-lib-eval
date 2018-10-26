@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Chart } from 'angular-highcharts';
-import { CsvUtilsService } from '../../shared/services/csv-utils.service';
+import { CsvUtilsService } from '../../services/csv-utils.service';
 import { SelectItem } from 'primeng/api';
+import { ChartReadyEvent } from 'ng2-google-charts';
 
 @Component({
     selector: 'app-google-charts',
@@ -25,6 +26,8 @@ export class GoogleChartsComponent implements OnInit {
     chartOptions = null;
     chart = null;
     isShowDialog = false;
+
+    @ViewChild('theChart') theChart;
 
     constructor(
         private csvUtils: CsvUtilsService,
@@ -130,6 +133,7 @@ export class GoogleChartsComponent implements OnInit {
 
         this.chartOptions = this.getChartOptions(categories, series);
         this.chart = new Chart(this.chartOptions);
+
     }
 
     getChartOptions(categories, series) {
@@ -142,6 +146,10 @@ export class GoogleChartsComponent implements OnInit {
         });
         return {
             chartType: 'ColumnChart',
+            options: {
+                width: 1200,
+                height: 563,
+            },
             dataTable: dataTable,
         };
     }
@@ -177,5 +185,13 @@ export class GoogleChartsComponent implements OnInit {
             this.selectedGeographyFilter.length + this.selectedCompensationElementFilter.length +
             this.selectedJobFunctionFilter.length + this.selectedJobFamilyFilter.length;
         this.updateChartData();
+    }
+
+    chartReady(event: ChartReadyEvent) {
+        const legend = this.theChart.el.nativeElement
+            .querySelector('svg')
+            .querySelector('g')
+            .querySelector('rect');
+        legend.setAttribute('class', 'chart-legend-svg');
     }
 }

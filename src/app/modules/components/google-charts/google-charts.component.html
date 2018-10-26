@@ -19,7 +19,11 @@
             </div>
         </div>
         <!-- <div class="chart" *ngIf="chartOptions" [chart]="chart" style="width: 1200px; height: 563px; display: block;"></div> -->
-        <google-chart *ngIf="data" [data]="chartOptions"></google-chart>
+        <google-chart
+            #theChart
+            *ngIf="data" [data]="chartOptions" style="width: 1200px; height: 563px; display: block;"
+            (chartReady)="chartReady($event)">
+        </google-chart>
     </div>
 </div>
 

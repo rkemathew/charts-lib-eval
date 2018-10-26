@@ -9,7 +9,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { HighChartsComponent } from './high-charts/high-charts.component';
 
 import { KfComponentsModule, KfDropdownService } from '@kf-products-core/kfhub_lib';
-import { CsvUtilsService } from '../shared/services/csv-utils.service';
+import { CsvUtilsService } from '../services/csv-utils.service';
 import { GoogleChartsComponent } from './google-charts/google-charts.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 @NgModule({
