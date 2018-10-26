@@ -26,7 +26,7 @@ export class ChartFrameworkComponent implements OnInit {
         this.isShowDialog = true;
     }
 
-    onFilterChange(event, filterType) {
+    onFilterChange(event, chartFilterChanged: ChartFilter) {
         this.allFiltersCount = 0;
         this.chartFilters.forEach((chartFilter: ChartFilter) => {
             this.allFiltersCount += chartFilter.selectedItems.length;

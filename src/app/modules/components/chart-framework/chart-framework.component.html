@@ -32,7 +32,7 @@
         <p-multiSelect
             styleClass="filter-dropdown"
             [options]="chartFilter.items"
-            (onChange)="onFilterChange($event, 'chartFilter.subCategory')"
+            (onChange)="onFilterChange($event, chartFilter)"
             [filter]="true"
             [defaultLabel]="chartFilter.subCategory"
             [maxSelectedLabels]="0"

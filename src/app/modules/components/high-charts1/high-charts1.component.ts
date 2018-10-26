@@ -17,6 +17,12 @@ export class HighCharts1Component implements OnInit {
     compensationElementFilter: SelectItem[] = [];
     jobFunctionFilter: SelectItem[] = [];
     jobFamilyFilter: SelectItem[] = [];
+
+    selectedGeographyFilter = [];
+    selectedCompensationElementFilter = [];
+    selectedJobFunctionFilter = [];
+    selectedJobFamilyFilter = [];
+
     isRenderReady = false;
 
     constructor(
@@ -94,10 +100,30 @@ export class HighCharts1Component implements OnInit {
 
     get ChartFilters(): ChartFilter[] {
         return [
-            { category: 'Main', subCategory: 'Geography', items: this.geographyFilter, selectedItems: [] },
-            { category: 'Main', subCategory: 'Compensation Element', items: this.compensationElementFilter, selectedItems: [] },
-            { category: 'Main', subCategory: 'Job Function', items: this.jobFunctionFilter, selectedItems: [] },
-            { category: 'Main', subCategory: 'Job Family', items: this.jobFamilyFilter, selectedItems: [] },
+            {
+                category: 'Main',
+                subCategory: 'Geography',
+                items: this.geographyFilter,
+                selectedItems: this.selectedGeographyFilter
+            },
+            {
+                category: 'Main',
+                subCategory: 'Compensation Element',
+                items: this.compensationElementFilter,
+                selectedItems: this.selectedCompensationElementFilter
+            },
+            {
+                category: 'Main',
+                subCategory: 'Job Function',
+                items: this.jobFunctionFilter,
+                selectedItems: this.selectedJobFunctionFilter
+            },
+            {
+                category: 'Main',
+                subCategory: 'Job Family',
+                items: this.jobFamilyFilter,
+                selectedItems: this.selectedJobFamilyFilter
+            },
         ];
     }
 
