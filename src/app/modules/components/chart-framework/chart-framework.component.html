@@ -1,0 +1,48 @@
+<div class="filter-chart-container">
+    <div class="filter-handle" (click)="showFilters()">
+        <div class="counter" *ngIf="allFiltersCount > 0">{{ allFiltersCount }}</div>
+        <div class="icon"><i class="fa fa-filter"></i></div>
+        <div class="title">FILTERS</div>
+    </div>
+
+    <div class="chart-and-header">
+        <div class="chart-header">
+            <div class="general-title">{{ chartHeader.category  }}</div>
+            <div class="specific-title">{{ chartHeader.title }}</div>
+            <div class="description">{{ chartHeader.description }}</div>
+        </div>
+        <div class="chart" *ngIf="chartOptions" [chart]="chart" style="width: 1200px; height: 563px; display: block;"></div>
+<!--
+        <google-chart
+            #theChart
+            *ngIf="data" [data]="chartOptions" style="width: 1200px; height: 563px; display: block;"
+            (chartReady)="chartReady($event)">
+        </google-chart>
+-->
+    </div>
+</div>
+
+<kf-slider-dialog *ngIf="isShowDialog"
+    from="left" styleClass="filter-side-bar" [(visible)]="isShowDialog" showHeader="false" closable="false">
+    <div class="filter-header">Report Filters</div>
+
+    <ng-container *ngFor="let chartFilter of chartFilters; trackBy: trackBySubCategory">
+        <div class="filter-title">{{ chartFilter.subCategory }}</div>
+
+        <p-multiSelect
+            styleClass="filter-dropdown"
+            [options]="chartFilter.items"
+            (onChange)="onFilterChange($event, 'chartFilter.subCategory')"
+            [filter]="true"
+            [defaultLabel]="chartFilter.subCategory"
+            [maxSelectedLabels]="0"
+        ></p-multiSelect>
+
+<!--
+        <p-multiSelect styleClass="filter-dropdown" [options]="chartFilter.items" [(ngModel)]="chartFilter.selectedItems"
+            (onChange)="onFilterChange($event, 'chartFilter.subCategory')" [filter]="true" [defaultLabel]="chartFilter.subCategory"
+            [maxSelectedLabels]="0"
+        ></p-multiSelect>
+-->
+    </ng-container>
+</kf-slider-dialog>

@@ -20,11 +20,11 @@ export class HighChartsComponent implements OnInit {
     selectedCompensationElementFilter = [];
     selectedJobFunctionFilter = [];
     selectedJobFamilyFilter = [];
-    allFiltersCount = 0;
 
-    chartOptions = null;
     chart = null;
+    chartOptions = null;
     isShowDialog = false;
+    allFiltersCount = 0;
 
     constructor(
         private csvUtils: CsvUtilsService,

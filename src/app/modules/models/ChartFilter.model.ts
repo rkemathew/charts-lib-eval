@@ -4,4 +4,5 @@ export interface ChartFilter {
     category: string;
     subCategory: string;
     items: SelectItem[];
+    selectedItems: any[];
 }
