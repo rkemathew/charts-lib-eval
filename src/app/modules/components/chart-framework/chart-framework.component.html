@@ -32,17 +32,11 @@
         <p-multiSelect
             styleClass="filter-dropdown"
             [options]="chartFilter.items"
+            [(ngModel)]="chartFilter.selectedItems"
             (onChange)="onFilterChange($event, chartFilter)"
-            [filter]="true"
             [defaultLabel]="chartFilter.subCategory"
+            [filter]="true"
             [maxSelectedLabels]="0"
         ></p-multiSelect>
-
-<!--
-        <p-multiSelect styleClass="filter-dropdown" [options]="chartFilter.items" [(ngModel)]="chartFilter.selectedItems"
-            (onChange)="onFilterChange($event, 'chartFilter.subCategory')" [filter]="true" [defaultLabel]="chartFilter.subCategory"
-            [maxSelectedLabels]="0"
-        ></p-multiSelect>
--->
     </ng-container>
 </kf-slider-dialog>

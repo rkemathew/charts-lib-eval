@@ -13,6 +13,7 @@ import { SelectItem } from 'primeng/api';
 })
 export class HighCharts1Component implements OnInit {
     data = null;
+
     geographyFilter: SelectItem[] = [];
     compensationElementFilter: SelectItem[] = [];
     jobFunctionFilter: SelectItem[] = [];
@@ -22,6 +23,10 @@ export class HighCharts1Component implements OnInit {
     selectedCompensationElementFilter = [];
     selectedJobFunctionFilter = [];
     selectedJobFamilyFilter = [];
+
+    chartHeader: ChartHeader = null;
+    chartFilters: ChartFilter[] = null;
+    chartContent: ChartContent = null;
 
     isRenderReady = false;
 
@@ -34,13 +39,26 @@ export class HighCharts1Component implements OnInit {
         this.http.get('assets/kf-payh-poc-charts-sample-data.csv', { responseType: 'text' }).subscribe((csvData) => {
             const data = this.csvUtils.csvToJSON(csvData);
             this.data = data;
-            this.updateFilters();
-            // this.updateChartData();
+            this.updateChartHeader();
+            this.updateChartFilters();
+            this.updateChartContent();
             this.isRenderReady = true;
         });
     }
 
-    updateFilters() {
+    updateChartHeader() {
+        this.chartHeader = {
+            category: 'Pay for Performance',
+            title: 'Pay for Performance Over Time - High Charts',
+            description: `
+                This report summarized how your pay for performance data relates to both tenure and job level within your organization.
+                Analysis of this data can help you see if you are differentiating pay based upon performance and the potential impact tenure
+                has on overall pay.
+            `
+        };
+    }
+
+    updateChartFilters() {
         const distinctGeographies = [];
         const distinctCompensationElements = [];
         const distinctJobFunctions = [];
@@ -84,22 +102,8 @@ export class HighCharts1Component implements OnInit {
         distinctJobFamilies.forEach((jobFamily, index) => {
             this.jobFamilyFilter.push({ label: jobFamily, value: jobFamily });
         });
-    }
 
-    get ChartHeader(): ChartHeader {
-        return {
-            category: 'Pay for Performance',
-            title: 'Pay for Performance Over Time - High Charts',
-            description: `
-                This report summarized how your pay for performance data relates to both tenure and job level within your organization.
-                Analysis of this data can help you see if you are differentiating pay based upon performance and the potential impact tenure
-                has on overall pay.
-            `
-        };
-    }
-
-    get ChartFilters(): ChartFilter[] {
-        return [
+        this.chartFilters = [
             {
                 category: 'Main',
                 subCategory: 'Geography',
@@ -127,7 +131,8 @@ export class HighCharts1Component implements OnInit {
         ];
     }
 
-    get ChartContent(): ChartContent {
+    updateChartContent(): ChartContent {
+/*
         return {
             getData: () => {
                 return [
@@ -135,5 +140,11 @@ export class HighCharts1Component implements OnInit {
                 ];
             }
         };
+*/
+        return null;
+    }
+
+    onChartFiltersChange(event) {
+        console.log('event', event);
     }
 }

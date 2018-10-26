@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { ChartHeader } from '../../models/ChartHeader.model';
 import { ChartFilter } from '../../models/ChartFilter.model';
 import { ChartContent } from '../../models/ChartContent.model';
@@ -36,5 +36,11 @@ export class ChartFrameworkComponent implements OnInit {
 
     trackBySubCategory(index: number, element: ChartFilter) {
         return element ? element.subCategory : null;
+    }
+
+    onSelectedItemChange(event, chartFilter: ChartFilter) {
+        chartFilter.selectedItems = event;
+        // console.log('onSelectedItemChange event, chartFilter', event, chartFilter);
+        // console.log('onSelectedItemChange _chartFilters', this._chartFilters);
     }
 }

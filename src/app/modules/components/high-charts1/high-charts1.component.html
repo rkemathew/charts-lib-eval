@@ -1,6 +1,6 @@
 <app-chart-framework
-    *ngIf="isRenderReady"
-    [chartHeader]="ChartHeader"
-    [chartFilters]="ChartFilters"
-    [chartContent]="ChartContent"
+    *ngIf="chartHeader && chartFilters"
+    [chartHeader]="chartHeader"
+    [(chartFilters)]="chartFilters"
+    [chartContent]="chartContent"
 ></app-chart-framework>
