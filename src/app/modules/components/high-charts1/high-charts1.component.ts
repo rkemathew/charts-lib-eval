@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Chart } from 'angular-highcharts';
+import { HttpClient } from '@angular/common/http';
+import { SelectItem } from 'primeng/api';
+import { CsvUtilsService } from '../../services/csv-utils.service';
 import { ChartHeader } from '../../models/ChartHeader.model';
 import { ChartFilter } from '../../models/ChartFilter.model';
 import { ChartContent } from '../../models/ChartContent.model';
-import { HttpClient } from '@angular/common/http';
-import { CsvUtilsService } from '../../services/csv-utils.service';
-import { SelectItem } from 'primeng/api';
 
 @Component({
     selector: 'app-high-charts1',
@@ -19,16 +20,11 @@ export class HighCharts1Component implements OnInit {
     jobFunctionFilter: SelectItem[] = [];
     jobFamilyFilter: SelectItem[] = [];
 
-    selectedGeographyFilter = [];
-    selectedCompensationElementFilter = [];
-    selectedJobFunctionFilter = [];
-    selectedJobFamilyFilter = [];
-
     chartHeader: ChartHeader = null;
     chartFilters: ChartFilter[] = null;
     chartContent: ChartContent = null;
 
-    isRenderReady = false;
+    chartOptions = null;
 
     constructor(
         private http: HttpClient,
@@ -37,12 +33,10 @@ export class HighCharts1Component implements OnInit {
 
     ngOnInit() {
         this.http.get('assets/kf-payh-poc-charts-sample-data.csv', { responseType: 'text' }).subscribe((csvData) => {
-            const data = this.csvUtils.csvToJSON(csvData);
-            this.data = data;
+            this.data = this.csvUtils.csvToJSON(csvData);
             this.updateChartHeader();
             this.updateChartFilters();
             this.updateChartContent();
-            this.isRenderReady = true;
         });
     }
 
@@ -108,43 +102,157 @@ export class HighCharts1Component implements OnInit {
                 category: 'Main',
                 subCategory: 'Geography',
                 items: this.geographyFilter,
-                selectedItems: this.selectedGeographyFilter
+                selectedItems: [],
             },
             {
                 category: 'Main',
                 subCategory: 'Compensation Element',
                 items: this.compensationElementFilter,
-                selectedItems: this.selectedCompensationElementFilter
+                selectedItems: [],
             },
             {
                 category: 'Main',
                 subCategory: 'Job Function',
                 items: this.jobFunctionFilter,
-                selectedItems: this.selectedJobFunctionFilter
+                selectedItems: [],
             },
             {
                 category: 'Main',
                 subCategory: 'Job Family',
                 items: this.jobFamilyFilter,
-                selectedItems: this.selectedJobFamilyFilter
+                selectedItems: [],
             },
         ];
     }
 
-    updateChartContent(): ChartContent {
-/*
-        return {
-            getData: () => {
-                return [
-                    [ { something: 'anything' } ]
-                ];
+    updateChartContent() {
+        let minYears = Number.MAX_VALUE;
+        let maxYears = Number.MIN_VALUE;
+        this.data.forEach((record) => {
+            const yearsEmployed = +record['YearsEmployed'];
+            if (yearsEmployed < minYears) {
+                minYears = yearsEmployed;
             }
+
+            if (yearsEmployed > maxYears) {
+                maxYears = yearsEmployed;
+            }
+        });
+
+        const seriesTicksBelow = new Array(maxYears - 1).fill(0, 0, maxYears - 1);
+        const seriesTicksMeets = new Array(maxYears - 1).fill(0, 0, maxYears - 1);
+        const seriesTicksAbove = new Array(maxYears - 1).fill(0, 0, maxYears - 1);
+
+        this.data.forEach((record) => {
+            const yearsEmployed = +record['YearsEmployed'];
+            if (this.isInFilter(record)) {
+                const index = yearsEmployed - 1;
+                const expectations = +record['Expectations'];
+                switch (expectations) {
+                case 1: seriesTicksBelow[index] = seriesTicksBelow[index] ? seriesTicksBelow[index] + 1 : 1; break;
+                case 2: seriesTicksMeets[index] = seriesTicksMeets[index] ? seriesTicksMeets[index] + 1 : 1; break;
+                case 3: seriesTicksAbove[index] = seriesTicksAbove[index] ? seriesTicksAbove[index] + 1 : 1; break;
+                }
+            }
+        });
+
+        const categories = [];
+        for (let i = minYears; i <= maxYears; i++) {
+            categories.push(i);
+        }
+
+        const series = [
+            { name: 'Below Expectation', data: seriesTicksBelow },
+            { name: 'Meets Expectation', data: seriesTicksMeets },
+            { name: 'Above Expectation', data: seriesTicksAbove }
+        ];
+
+        this.chartOptions = this.getChartOptions(categories, series);
+        const chart = new Chart(this.chartOptions);
+        this.chartContent = { chart: chart };
+    }
+
+    getChartOptions(categories, series) {
+        return {
+            chart: {
+                type: 'column',
+                plotBackgroundColor: '#F8F8F8'
+            },
+            title: {
+                text: '',
+                floating: true
+            },
+            xAxis: {
+                categories: categories,
+                title: {
+                    text: 'Years Employed'
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Compensation (Millions)',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify',
+                    formatter: (ref) => ref.value + 'M'
+                }
+            },
+            tooltip: {
+                valueSuffix: ' millions'
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                width: 150,
+                padding: 30,
+                margin: 20,
+                verticalAlign: 'top',
+                floating: false,
+                borderRadius: 5,
+                itemMarginBottom: 10,
+                backgroundColor: '#FAFAFA',
+                symbolRadius: 0,
+                shadow: false
+            },
+            credits: {
+                enabled: false
+            },
+            series: series
         };
-*/
-        return null;
+    }
+
+    isInFilter(record) {
+        let retVal = true;
+
+        if (this.chartFilters[0].selectedItems.length > 0) {
+            retVal = this.chartFilters[0].selectedItems.includes(record['Geography']);
+        }
+
+        if (this.chartFilters[1].selectedItems.length > 0) {
+            retVal = this.chartFilters[1].selectedItems.includes(record['CompensationElement']);
+        }
+
+        if (this.chartFilters[2].selectedItems.length > 0) {
+            retVal = this.chartFilters[2].selectedItems.includes(record['JobFunction']);
+        }
+
+        if (this.chartFilters[3].selectedItems.length > 0) {
+            retVal = this.chartFilters[3].selectedItems.includes(record['JobFamily']);
+        }
+
+        return retVal;
     }
 
     onChartFiltersChange(event) {
-        console.log('event', event);
+        this.updateChartContent();
     }
 }

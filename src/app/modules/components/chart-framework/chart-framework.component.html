@@ -11,7 +11,7 @@
             <div class="specific-title">{{ chartHeader.title }}</div>
             <div class="description">{{ chartHeader.description }}</div>
         </div>
-        <div class="chart" *ngIf="chartOptions" [chart]="chart" style="width: 1200px; height: 563px; display: block;"></div>
+        <div class="chart" [chart]="chartContent.chart" style="width: 1200px; height: 563px; display: block;"></div>
 <!--
         <google-chart
             #theChart
@@ -33,7 +33,7 @@
             styleClass="filter-dropdown"
             [options]="chartFilter.items"
             [(ngModel)]="chartFilter.selectedItems"
-            (onChange)="onFilterChange($event, chartFilter)"
+            (onChange)="onFilterChange($event)"
             [defaultLabel]="chartFilter.subCategory"
             [filter]="true"
             [maxSelectedLabels]="0"

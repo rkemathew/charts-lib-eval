@@ -1,3 +1,3 @@
 export interface ChartContent {
-    getData(): any[][];
+    chart: any;
 }

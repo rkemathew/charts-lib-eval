@@ -1,6 +1,7 @@
 <app-chart-framework
-    *ngIf="chartHeader && chartFilters"
+    *ngIf="chartHeader && chartFilters && chartContent"
     [chartHeader]="chartHeader"
-    [(chartFilters)]="chartFilters"
+    [chartFilters]="chartFilters"
+    (chartFiltersChange)="onChartFiltersChange($event)"
     [chartContent]="chartContent"
 ></app-chart-framework>
