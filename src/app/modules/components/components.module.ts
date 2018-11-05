@@ -14,13 +14,16 @@ import { CsvUtilsService } from '../services/csv-utils.service';
 import { GoogleChartsComponent } from './google-charts/google-charts.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { HighChartsWithFrameworkComponent } from './high-charts-w-framework/high-charts-w-framework.component';
+import { GoogleChartsWithFrameworkComponent } from './google-charts-w-framework/google-charts-w-framework.component';
 import { ChartFrameworkComponent } from './chart-framework/chart-framework.component';
+
 @NgModule({
     declarations: [
         ChartFrameworkComponent,
         HighChartsComponent,
         HighChartsWithFrameworkComponent,
         GoogleChartsComponent,
+        GoogleChartsWithFrameworkComponent,
     ],
 
     imports: [
@@ -39,6 +42,7 @@ import { ChartFrameworkComponent } from './chart-framework/chart-framework.compo
         HighChartsComponent,
         HighChartsWithFrameworkComponent,
         GoogleChartsComponent,
+        GoogleChartsWithFrameworkComponent,
     ],
     providers: [
         CsvUtilsService,

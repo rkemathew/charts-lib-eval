@@ -1,0 +1,115 @@
+.page-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.filter-chart-container {
+    display: flex;
+
+    .chart-and-header {
+        margin-left: 20px;
+        width: 1212px;
+        padding: 10px;
+
+        .general-title {
+            color: lightgray;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .specific-title {
+            color: black;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+::ng-deep .filter-side-bar.ui-sidebar.ui-sidebar-right {
+    background: #FFF;
+    padding: 20px;
+
+    header {
+        margin: 0;
+        border-bottom: none;
+    }
+
+    .slider-content {
+        height: 100%;
+    }
+}
+
+.filter-handle {
+    background-color: #FAFAFA;
+    border: solid 1px gray;
+    width: 50px;
+    margin-left: 3px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #027fc9;
+
+    .counter {
+        width: 25px;
+        height: 20px;
+        padding-top: 4px;
+        margin-left: 11px;
+        margin-bottom: 20px;
+        border: solid 1px black;
+    }
+
+    .icon {
+        margin-left: -7px;
+    }
+
+    .title {
+        width: 100px;
+        margin-top: 95px;
+        margin-left: 13px;
+        transform-origin: top left;
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);    /* Safari */
+        -moz-transform: rotate(-90deg);       /* Firefox */
+        -ms-transform: rotate(-90deg);        /* IE */
+        -o-transform: rotate(-90deg);         /* Opera */
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* Internet Explorer */
+    }
+}
+
+.filter-header {
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.filter-title {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+::ng-deep .filter-dropdown {
+    .ui-multiselect-label-container {
+        width: 262px;
+    }
+}
+
+::ng-deep .slider-body {
+    min-height: 600px;
+}
+
+::ng-deep .chart-legend-svg {
+    fill: #FAFAFA;
+    stroke: black;
+    stroke-width: 1;
+    padding: 10px;
+}

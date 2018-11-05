@@ -1,0 +1,8 @@
+<app-chart-framework
+    *ngIf="chartHeader && chartFilters && chartContent"
+    [chartHeader]="chartHeader"
+    [chartFilters]="chartFilters"
+    (chartFiltersChange)="onChartFiltersChange($event)"
+>
+    <google-chart #theChart *ngIf="data" [data]="chartOptions" (chartReady)="chartReady($event)"></google-chart>
+</app-chart-framework>
