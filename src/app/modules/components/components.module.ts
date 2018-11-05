@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartModule } from 'angular-highcharts';
 import { ModalModule } from 'ngx-modialog';
+import { ButtonModule } from 'primeng/button';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { TabViewModule } from 'primeng/tabview';
 
@@ -33,12 +34,19 @@ import { ChartFrameworkComponent } from './chart-framework/chart-framework.compo
         ChartModule,
         Ng2GoogleChartsModule,
         ModalModule,
+        ButtonModule,
         MultiSelectModule,
         TabViewModule,
         KfComponentsModule,
     ],
     exports: [
         ChartFrameworkComponent,
+        HighChartsComponent,
+        HighChartsWithFrameworkComponent,
+        GoogleChartsComponent,
+        GoogleChartsWithFrameworkComponent,
+    ],
+    entryComponents: [
         HighChartsComponent,
         HighChartsWithFrameworkComponent,
         GoogleChartsComponent,

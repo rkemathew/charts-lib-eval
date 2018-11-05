@@ -43,7 +43,7 @@ export class HighChartsWithFrameworkComponent implements OnInit {
     updateChartHeader() {
         this.chartHeader = {
             category: 'Pay for Performance',
-            title: 'Pay for Performance Over Time - High Charts',
+            title: 'Pay for Performance Over Time - High Charts (implemented with Framework)',
             description: `
                 This report summarized how your pay for performance data relates to both tenure and job level within your organization.
                 Analysis of this data can help you see if you are differentiating pay based upon performance and the potential impact tenure
