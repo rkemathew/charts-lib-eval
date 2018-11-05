@@ -105,7 +105,7 @@ export class HighCharts1Component implements OnInit {
                 selectedItems: [],
             },
             {
-                category: 'Main',
+                category: 'Alternate',
                 subCategory: 'Compensation Element',
                 items: this.compensationElementFilter,
                 selectedItems: [],
@@ -117,7 +117,7 @@ export class HighCharts1Component implements OnInit {
                 selectedItems: [],
             },
             {
-                category: 'Main',
+                category: 'Alternate',
                 subCategory: 'Job Family',
                 items: this.jobFamilyFilter,
                 selectedItems: [],

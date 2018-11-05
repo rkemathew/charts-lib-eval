@@ -28,20 +28,22 @@
     <div kf-slider-header-left class="filter-header">Report Filters</div>
 
     <p-tabView>
-        <p-tabPanel header="Header 1">
-            <ng-container *ngFor="let chartFilter of chartFilters; trackBy: trackBySubCategory">
-                <div class="filter-title">{{ chartFilter.subCategory }}</div>
-        
-                <p-multiSelect
-                    styleClass="filter-dropdown"
-                    [options]="chartFilter.items"
-                    [(ngModel)]="chartFilter.selectedItems"
-                    (onChange)="onFilterChange($event)"
-                    [defaultLabel]="chartFilter.subCategory"
-                    [filter]="true"
-                    [maxSelectedLabels]="0"
-                ></p-multiSelect>
-            </ng-container>
-        </p-tabPanel>
+        <ng-container *ngFor="let key of chartFilterMap.Keys()">
+            <p-tabPanel header="{{ key }}">
+                <ng-container *ngFor="let chartFilter of chartFilterMap.Item(key); trackBy: trackBySubCategory">
+                    <div class="filter-title">{{ chartFilter.subCategory }}</div>
+            
+                    <p-multiSelect
+                        styleClass="filter-dropdown"
+                        [options]="chartFilter.items"
+                        [(ngModel)]="chartFilter.selectedItems"
+                        (onChange)="onFilterChange($event)"
+                        [defaultLabel]="chartFilter.subCategory"
+                        [filter]="true"
+                        [maxSelectedLabels]="0"
+                    ></p-multiSelect>
+                </ng-container>
+            </p-tabPanel>            
+        </ng-container>
     </p-tabView>
 </kf-slider-dialog>
