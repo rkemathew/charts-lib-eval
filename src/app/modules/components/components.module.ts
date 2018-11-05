@@ -13,13 +13,13 @@ import { KfComponentsModule, KfDropdownService } from '@kf-products-core/kfhub_l
 import { CsvUtilsService } from '../services/csv-utils.service';
 import { GoogleChartsComponent } from './google-charts/google-charts.component';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
-import { HighCharts1Component } from './high-charts1/high-charts1.component';
+import { HighChartsWithFrameworkComponent } from './high-charts-w-framework/high-charts-w-framework.component';
 import { ChartFrameworkComponent } from './chart-framework/chart-framework.component';
 @NgModule({
     declarations: [
         ChartFrameworkComponent,
         HighChartsComponent,
-        HighCharts1Component,
+        HighChartsWithFrameworkComponent,
         GoogleChartsComponent,
     ],
 
@@ -37,7 +37,7 @@ import { ChartFrameworkComponent } from './chart-framework/chart-framework.compo
     exports: [
         ChartFrameworkComponent,
         HighChartsComponent,
-        HighCharts1Component,
+        HighChartsWithFrameworkComponent,
         GoogleChartsComponent,
     ],
     providers: [

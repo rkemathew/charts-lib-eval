@@ -3,5 +3,6 @@
     [chartHeader]="chartHeader"
     [chartFilters]="chartFilters"
     (chartFiltersChange)="onChartFiltersChange($event)"
-    [chartContent]="chartContent"
-></app-chart-framework>
+>
+    <div [chart]="chartContent.chart"></div>
+</app-chart-framework>

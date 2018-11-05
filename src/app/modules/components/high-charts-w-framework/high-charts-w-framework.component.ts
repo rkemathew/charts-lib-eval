@@ -8,11 +8,11 @@ import { ChartFilter } from '../../models/ChartFilter.model';
 import { ChartContent } from '../../models/ChartContent.model';
 
 @Component({
-    selector: 'app-high-charts1',
-    templateUrl: './high-charts1.component.html',
-    styleUrls: ['./high-charts1.component.less'],
+    selector: 'app-high-charts-w-framework',
+    templateUrl: './high-charts-w-framework.component.html',
+    styleUrls: ['./high-charts-w-framework.component.less'],
 })
-export class HighCharts1Component implements OnInit {
+export class HighChartsWithFrameworkComponent implements OnInit {
     data = null;
 
     geographyFilter: SelectItem[] = [];

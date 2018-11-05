@@ -10,7 +10,7 @@ import { KfKeyedCollection } from '@kf-products-core/kfhub_lib';
     templateUrl: './chart-framework.component.html',
     styleUrls: ['./chart-framework.component.less'],
 })
-export class ChartFrameworkComponent implements OnInit, OnChanges {
+export class ChartFrameworkComponent implements OnInit {
     chart = null;
     chartOptions = null;
     isShowDialog = false;
@@ -19,7 +19,6 @@ export class ChartFrameworkComponent implements OnInit, OnChanges {
 
     @Input()  chartHeader:  ChartHeader;
     @Input()  chartFilters: ChartFilter[];
-    @Input()  chartContent: ChartContent;
     @Output() chartFiltersChange = new EventEmitter();
 
     ngOnInit() {
@@ -36,13 +35,6 @@ export class ChartFrameworkComponent implements OnInit, OnChanges {
                     this.chartFilterMap.Add(key, categorizedChartFilters);
                 }
             });
-        }
-    }
-
-    ngOnChanges(changes: SimpleChanges) {
-        if ('chartContent' in changes && !changes.chartContent.firstChange) {
-            console.log('this.chartContent', this.chartContent);
-            this.chartContent = changes.chartContent.currentValue;
         }
     }
 

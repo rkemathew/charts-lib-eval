@@ -11,7 +11,10 @@
             <div class="specific-title">{{ chartHeader.title }}</div>
             <div class="description">{{ chartHeader.description }}</div>
         </div>
-        <div class="chart" [chart]="chartContent.chart" style="width: 1200px; height: 563px; display: block;"></div>
+        <!-- <div class="chart" [chart]="chartContent.chart" style="width: 1200px; height: 563px; display: block;"></div> -->
+        <div class="chart" style="width: 1200px; height: 563px; display: block;">
+            <ng-content></ng-content>
+        </div>
 <!--
         <google-chart
             #theChart
