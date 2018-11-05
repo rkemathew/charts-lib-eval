@@ -6,6 +6,7 @@ import { ChartModule } from 'angular-highcharts';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { ModalModule } from 'ngx-modialog';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { TabViewModule } from 'primeng/tabview';
 
 import { AppComponent } from './app.component';
 import { CsvUtilsService } from './modules/services/csv-utils.service';
@@ -25,6 +26,7 @@ import { KfComponentsModule, KfDropdownService } from '@kf-products-core/kfhub_l
         Ng2GoogleChartsModule,
         ModalModule,
         MultiSelectModule,
+        TabViewModule,
         KfComponentsModule,
         ComponentsModule,
     ],

@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChartModule } from 'angular-highcharts';
 import { ModalModule } from 'ngx-modialog';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { TabViewModule } from 'primeng/tabview';
 
 import { HighChartsComponent } from './high-charts/high-charts.component';
 
@@ -30,6 +31,7 @@ import { ChartFrameworkComponent } from './chart-framework/chart-framework.compo
         Ng2GoogleChartsModule,
         ModalModule,
         MultiSelectModule,
+        TabViewModule,
         KfComponentsModule,
     ],
     exports: [

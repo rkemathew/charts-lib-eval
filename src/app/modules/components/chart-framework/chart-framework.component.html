@@ -23,20 +23,25 @@
 </div>
 
 <kf-slider-dialog *ngIf="isShowDialog"
-    from="left" styleClass="filter-side-bar" [(visible)]="isShowDialog" showHeader="false" closable="false">
-    <div class="filter-header">Report Filters</div>
+    from="left" styleClass="filter-side-bar" [(visible)]="isShowDialog" showHeader="true" closable="false"
+>
+    <div kf-slider-header-left class="filter-header">Report Filters</div>
 
-    <ng-container *ngFor="let chartFilter of chartFilters; trackBy: trackBySubCategory">
-        <div class="filter-title">{{ chartFilter.subCategory }}</div>
-
-        <p-multiSelect
-            styleClass="filter-dropdown"
-            [options]="chartFilter.items"
-            [(ngModel)]="chartFilter.selectedItems"
-            (onChange)="onFilterChange($event)"
-            [defaultLabel]="chartFilter.subCategory"
-            [filter]="true"
-            [maxSelectedLabels]="0"
-        ></p-multiSelect>
-    </ng-container>
+    <p-tabView>
+        <p-tabPanel header="Header 1">
+            <ng-container *ngFor="let chartFilter of chartFilters; trackBy: trackBySubCategory">
+                <div class="filter-title">{{ chartFilter.subCategory }}</div>
+        
+                <p-multiSelect
+                    styleClass="filter-dropdown"
+                    [options]="chartFilter.items"
+                    [(ngModel)]="chartFilter.selectedItems"
+                    (onChange)="onFilterChange($event)"
+                    [defaultLabel]="chartFilter.subCategory"
+                    [filter]="true"
+                    [maxSelectedLabels]="0"
+                ></p-multiSelect>
+            </ng-container>
+        </p-tabPanel>
+    </p-tabView>
 </kf-slider-dialog>
