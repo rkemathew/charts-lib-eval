@@ -4,5 +4,5 @@
     [chartFilters]="chartFilters"
     (chartFiltersChange)="onChartFiltersChange($event)"
 >
-    <google-chart #theChart *ngIf="data" [data]="chartOptions" (chartReady)="chartReady($event)"></google-chart>
+    <google-chart #theChart *ngIf="chartOptions" [data]="chartOptions" (chartReady)="chartReady($event)"></google-chart>
 </app-chart-framework>

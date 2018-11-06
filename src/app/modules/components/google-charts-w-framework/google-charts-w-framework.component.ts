@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Chart } from 'angular-highcharts';
 import { CsvUtilsService } from '../../services/csv-utils.service';
 import { SelectItem } from 'primeng/api';
 import { ChartReadyEvent } from 'ng2-google-charts';

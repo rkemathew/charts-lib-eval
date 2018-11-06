@@ -4,5 +4,5 @@
     [chartFilters]="chartFilters"
     (chartFiltersChange)="onChartFiltersChange($event)"
 >
-    <div [chart]="chart"></div>
+    <div *ngIf="chart" [chart]="chart"></div>
 </app-chart-framework>
