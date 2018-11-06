@@ -5,7 +5,6 @@ import { SelectItem } from 'primeng/api';
 import { CsvUtilsService } from '../../services/csv-utils.service';
 import { ChartHeader } from '../../models/ChartHeader.model';
 import { ChartFilter } from '../../models/ChartFilter.model';
-import { ChartContent } from '../../models/ChartContent.model';
 
 @Component({
     selector: 'app-high-charts-w-framework',
@@ -22,8 +21,8 @@ export class HighChartsWithFrameworkComponent implements OnInit {
 
     chartHeader: ChartHeader = null;
     chartFilters: ChartFilter[] = null;
-    chartContent: ChartContent = null;
 
+    chart: Chart = null;
     chartOptions = null;
 
     constructor(
@@ -168,8 +167,7 @@ export class HighChartsWithFrameworkComponent implements OnInit {
         ];
 
         this.chartOptions = this.getChartOptions(categories, series);
-        const chart = new Chart(this.chartOptions);
-        this.chartContent = { chart: chart };
+        this.chart = new Chart(this.chartOptions);
     }
 
     getChartOptions(categories, series) {

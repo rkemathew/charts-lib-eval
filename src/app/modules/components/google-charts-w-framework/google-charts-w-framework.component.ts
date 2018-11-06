@@ -6,7 +6,6 @@ import { SelectItem } from 'primeng/api';
 import { ChartReadyEvent } from 'ng2-google-charts';
 import { ChartHeader } from '../../models/ChartHeader.model';
 import { ChartFilter } from '../../models/ChartFilter.model';
-import { ChartContent } from '../../models/ChartContent.model';
 
 @Component({
     selector: 'app-google-charts-w-framework',
@@ -23,7 +22,6 @@ export class GoogleChartsWithFrameworkComponent implements OnInit {
 
     chartHeader: ChartHeader = null;
     chartFilters: ChartFilter[] = null;
-    chartContent: ChartContent = null;
 
     chartOptions = null;
 
@@ -171,8 +169,6 @@ export class GoogleChartsWithFrameworkComponent implements OnInit {
         ];
 
         this.chartOptions = this.getChartOptions(categories, series);
-        const chart = new Chart(this.chartOptions);
-        this.chartContent = { chart: chart };
     }
 
     getChartOptions(categories, series) {
