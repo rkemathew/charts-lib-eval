@@ -16,6 +16,7 @@ export class ChartFrameworkComponent implements OnInit {
     isShowDialog = false;
     allFiltersCount = 0;
     chartFilterMap = new KfKeyedCollection<ChartFilter[]>();
+    activeChartType = 'AREA-CHART';
 
     @Input()  chartHeader:  ChartHeader;
     @Input()  chartFilters: ChartFilter[];
