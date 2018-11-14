@@ -11,17 +11,24 @@
             <div class="specific-title">{{ chartHeader.title }}</div>
             <div class="description">{{ chartHeader.description }}</div>
         </div>
-        <!-- <div class="chart" [chart]="chartContent.chart" style="width: 1200px; height: 563px; display: block;"></div> -->
-        <div class="chart" style="width: 1200px; height: 563px; display: block;">
+        <div class="chart-top-filter">
+            <ng-container *ngFor="let key of chartFilterMap.Keys()">
+                <ng-container *ngFor="let chartFilter of chartFilterMap.Item(key); trackBy: trackBySubCategory">
+                    <p-multiSelect
+                        styleClass="filter-dropdown"
+                        [options]="chartFilter.items"
+                        [(ngModel)]="chartFilter.selectedItems"
+                        (onChange)="onFilterChange($event)"
+                        [defaultLabel]="chartFilter.subCategory"
+                        [filter]="true"
+                        [maxSelectedLabels]="0"
+                    ></p-multiSelect>
+                </ng-container>
+            </ng-container>
+        </div>
+        <div class="chart">
             <ng-content></ng-content>
         </div>
-<!--
-        <google-chart
-            #theChart
-            *ngIf="data" [data]="chartOptions" style="width: 1200px; height: 563px; display: block;"
-            (chartReady)="chartReady($event)">
-        </google-chart>
--->
     </div>
 </div>
 
