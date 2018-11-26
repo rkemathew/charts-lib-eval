@@ -184,7 +184,7 @@ export class HighChartsWithFrameworkComponent implements OnInit {
                 categories: categories,
                 title: {
                     text: 'Years Employed'
-                }
+                },
             },
             yAxis: {
                 min: 0,
@@ -195,7 +195,7 @@ export class HighChartsWithFrameworkComponent implements OnInit {
                 labels: {
                     overflow: 'justify',
                     formatter: (ref) => ref.value + 'M'
-                }
+                },
             },
             tooltip: {
                 valueSuffix: ' millions'
