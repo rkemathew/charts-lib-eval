@@ -12,8 +12,8 @@
 
       // Conditionally change scaling
       if (this.options.scaling) {
+        // Just an example function
         result = 50 * arguments[1] + 10 * arguments[1] * arguments[1];
-        console.log(this.options);
       }
       return result;
     });
