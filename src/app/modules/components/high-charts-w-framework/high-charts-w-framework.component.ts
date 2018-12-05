@@ -33,6 +33,8 @@ export class HighChartsWithFrameworkComponent implements OnInit {
     ngOnInit() {
         this.http.get('assets/kf-payh-poc-charts-sample-data.csv', { responseType: 'text' }).subscribe((csvData) => {
             this.data = this.csvUtils.csvToJSON(csvData);
+            console.log('Data as JSON');
+            console.log(JSON.stringify(this.data));
             this.updateChartHeader();
             this.updateChartFilters();
             this.updateChartContent();
